@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+
+{%block content%}
+	<nav>
+	<a href="/painel/"> Painel de Login </a>
+	<a href="/create/"> Cadastro de Usuários </a><br>
+	</nav>
+	<section><form name="formPainel" id="formPainel" method="post" action="/dologin/">
+		<div class="col-6 mt-4 m-auto">
+		     {% if msg %}
+		        <div class="alert {{class}}">
+		            {{msg}}
+		        </div>
+		     {% endif %}
+
+			{% csrf_token %}
+			<h4>Acesso ao sistema</h4>
+			<input class="form-control mt-4" type="text" name="user" id="user" placeholder="Nome:">
+			<input class="form-control mt-4" type="password" name="password" id="password" placeholder="Senha:">
+			<input class="btn btn-dark mt-4" type="submit" value="Entrar">
+		</div>
+
+	</form></section>
+{%endblock%}

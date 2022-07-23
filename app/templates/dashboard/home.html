@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    {% if request.user.is_authenticated %}
+		<p align="left"><a href="/questionario/">Questões</a></p>
+		<p align="left"><a href="/logouts/">Sair</a></p>
+		<p align="middle"><img src='../static/bravologo.jpg'></p>
+		<p align="left"><a href="/logouts/"></a></p>
+
+
+
+    {% else %}
+	    <nav>
+	    <a href="/painel/"> Painel de Login </a>
+	    <a href="/create/"> Cadastro do Aluno </a><br>
+	    </nav>
+        <h4>Você não tem acesso a essa área!</h4>
+    {% endif %}
+
+{% endblock %}

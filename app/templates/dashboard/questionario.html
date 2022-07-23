@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    {% if request.user.is_authenticated %}
+		<p align="left"><a href="/dashboard/">Voltar</a></p>
+		<p align="left"><a href="/logouts/">Sair</a></p>
+
+		<section><form name="formQuest" id="formQuest" method="post" action="/questionario/">
+		<div class="col-6 mt-4 m-auto">
+		     {% if msg %}
+		        <div class="alert {{class}}">
+		            {{msg}}
+		        </div>
+		     {% endif %}
+
+			{% csrf_token %}
+			<h4>Perguntas:</h4>
+
+
+		</div>
+
+	</form></section>
+
+    {% else %}
+	    <nav>
+	    <a href="/painel/"> Painel de Login </a>
+	    <a href="/create/"> Cadastro do Aluno </a><br>
+	    </nav>
+        <h4 align="middle">Você não tem acesso a essa área!</h4>
+    {% endif %}
+
+{% endblock %}
