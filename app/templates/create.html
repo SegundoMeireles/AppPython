@@ -1,6 +1,7 @@
 {%extends 'main.html'%}
 
 {%block content%}
+	{% csrf_token %}
 	<nav>
 		<a href="/painel/"> Painel de Login </a>
 	<a href="/create/"> Cadastro do Aluno </a>
@@ -14,7 +15,7 @@
 		        </div>
 		     {% endif %}
 
-			{% csrf_token %}
+
 			<h4>Inserir novo usuário</h4>
 			<input class="form-control mt-4" type="text" name="user" id="user" placeholder="Nome:">
 			<input class="form-control mt-4" type="text" name="name" id="name" placeholder="Nome do usuário:">
