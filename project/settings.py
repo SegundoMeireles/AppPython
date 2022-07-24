@@ -79,17 +79,16 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'database_equipe',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': '',
+        'NAME': 'heroku_e59e4fb1d9e874d',
+        'HOST': 'us-cdbr-east-06.cleardb.net',
+        'USER': 'b54969120d47a0',
+        'PASSWORD': 'f20362af',
         'PORT': '3306',
         'OPTIONS': {
             'init_command':'SET default_storage_engine=InnoDB'
         }
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
